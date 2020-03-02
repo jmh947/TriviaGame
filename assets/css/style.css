@@ -1,0 +1,36 @@
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    color: black;
+    text-align: center;
+}
+
+button {
+    text-align: center;
+}
+
+.song {
+    align-items: center;
+}
+
+.image {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+audio {
+    margin: 35px;
+}
+
+.centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
