@@ -24,25 +24,57 @@
     <div class="image">
         <img src= ./assets/images/download.png width= "100%" height= "100%" alt= "text">
     <div class="centered"> 
-
         <audio class= song controls>
                 <source src="./assets/images/the rembrandts - ill be there for you (theme from friends).mp3" type="audio/mpeg">
         </audio>
-      <div class: 
-        <h1>Friends Trivia</h1>
-  <p>There are 10 trivia questions. You will have 20 seconds to answer each question!</p>
-  <p>We will see how well you know your Friends.  Good Luck!</p>
-  <button class= play href="#">Play</button>
-    </div>
 
+
+        <div class= "container">
+          <div id= "game">
+        <h1>Friends Trivia</h1>
+  <p>There are 10 trivia questions. You will have 10 seconds to answer each question!</p>
+  <p>We will see how well you know your Friends.  Good Luck!</p>
+  <p id= "remaining-time" class= "lead"> Remaining Time: <span id= "timer"></span></p>
+  
+  <p id = "questions" class= "lead"></p>
+      </div>
+    <div id = "results"></div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="row">
+    <div id="choices" class="text-center">
+      <button id="start" class="btn btn-info btn-lg">Start Game</button>
+      <div id="options">
+        
+      </div>
+      
+    </div>
+  </div>
+
+    </div>
+    </div>
+  
 
     <!--Links for javascript and jquery -->
-    <script src="./assets/javascript/app.js"></script>
-
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.js"
       integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
       crossorigin="anonymous"></script>
+
+      <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+          <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="./assets/javascript/app.js"></script>
       
   </body>
 </html>

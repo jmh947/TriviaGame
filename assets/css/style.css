@@ -29,8 +29,21 @@ audio {
 
 .centered {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
+  .container {
+      background-color: white;
+      border: solid 5px black;
+      padding: 20px;
+  }
+
+  #start {
+    align-items: center;
+  }
+
+#questions {
+    background-color: white;
+}
