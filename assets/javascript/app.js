@@ -57,7 +57,7 @@ var trivia = {
 
     startGame: function(){
         // restarting game results
-        trivia.currentSet = 0;
+        trivia.currentSet = 1;
         trivia.correct = 0;
         trivia.incorrect = 0;
         trivia.unanswered = 0;
@@ -95,11 +95,19 @@ var trivia = {
         }
         
         // gets all the questions then indexes the current questions
-        var questionContent = Object.values(trivia.questions)[trivia.currentSet];
-        $('#question').text(questionContent);
+        var index = "q" + trivia.currentSet
+        console.log("index:", index)
+        var questionContent = trivia.questions[index];
+        console.log(questionContent)
+        $('#quest').text(questionContent);
+
+        //Append instructions for for question content
+        //$.each(questionOptions, function(index, key){
+          //$('#questions').append($('#instructions'));
+      
         
         // an array of all the user options for the current question
-        var questionOptions = Object.values(trivia.options)[trivia.currentSet];
+        var questionOptions = trivia.options[index];  // reading the array of options
         
         // creates all the trivia guess options in the html
         $.each(questionOptions, function(index, key){
@@ -146,16 +154,17 @@ var trivia = {
       },
       // method to evaluate the option clicked
       guessChecker : function() {
-        
+        console.log(this)
         // timer ID for gameResult setTimeout
         var resultId;
         
         // the answer to the current question being asked
-        var currentAnswer = Object.values(trivia.answers)[trivia.currentSet];
+        var currentAnswer = trivia.answers["q"+trivia.currentSet];
         
         // if the text of the option picked matches the answer of the current question, increment correct
         if($(this).text() === currentAnswer){
           // turn button green for correct
+        
           $(this).addClass('btn-success').removeClass('btn-info');
           
           trivia.correct++;
@@ -191,3 +200,60 @@ var trivia = {
       }
     
     }
+
+
+
+
+    // var global variables
+
+    // questionIndex=1
+
+
+
+    // create questions / responses / valid
+
+    // both inside of a div - html (id for question )   (id for the resposes)
+
+
+    
+
+  // function showquestion  
+ // timer  when go out go to go to the next  (// when respond (user click any button == verify and go next step)
+        // questionIndex++
+        // verify if we have more questions or not
+        // if questionIndex > 10 go to results
+        // if not showquestion
+    //)
+
+        // show the question the one that indicate the questionIndex
+
+
+  // onclick
+      // when respond (user click any button == verify and go next step)
+        // questionIndex++
+        // verify if we have more questions or not
+        // if questionIndex > 10 go to results
+        // if not showquestion
+
+  // function 
+
+ 
+
+
+  // var   number strings array object  boolean
+
+  var num = 1   // math operations with number 
+
+  var str = "1"    //str+str = "11"
+  var str="a"       // str + str = "aa"
+
+  var array = ["a","b","c"]  //start with position    list  array[0]  array[1]
+  
+
+  var key = "color"   // car[key]  or car.color  
+  var car={     //  dot notation or bracket notation   car.brand   car["brand"]
+    brand:"toyota",
+    color:"red",
+    model:"prius"
+
+  }
