@@ -11,7 +11,7 @@ var trivia = {
     correct: 0,
     incorrect: 0,
     unanswered: 0,
-    currentSet: 0,
+    currentSet: 1,
     timer: 20,
     timerOn: false,
     timerId: '',
@@ -84,8 +84,9 @@ var trivia = {
       // method to loop through and display questions and options 
       nextQuestion : function(){
         
-        // set timer to 20 seconds each question
+        // set timer to 10 seconds each question
         trivia.timer = 10;
+        console.log(trivia.timer);
          $('#timer').removeClass('last-seconds');
         $('#timer').text(trivia.timer);
         
@@ -117,8 +118,9 @@ var trivia = {
       },
       // method to decrement counter and count unanswered if timer runs out
       timerRunning : function(){
+      
         // if timer still has time left and there are still questions left to ask
-        if(trivia.timer > -1 && trivia.currentSet < Object.keys(trivia.questions).length){
+        if(trivia.timer > -1 && trivia.currentSet <= Object.keys(trivia.questions).length){
           $('#timer').text(trivia.timer);
           trivia.timer--;
             if(trivia.timer === 4){
@@ -131,11 +133,11 @@ var trivia = {
           trivia.result = false;
           clearInterval(trivia.timerId);
           resultId = setTimeout(trivia.guessResult, 1000);
-          $('#results').html('<h3>Out of time! The answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
+          $('#results').html('<h3>Out of time! The answer was '+ (trivia.answers)[trivia.currentSet] +'</h3>');
         }
         // if all the questions have been shown end the game, show results
-        else if(trivia.currentSet === Object.keys(trivia.questions).length){
-          
+        else if(trivia.currentSet > Object.keys(trivia.questions).length) {
+        
           // adds results of game (correct, incorrect, unanswered) to the page
           $('#results')
             .html('<h3>Thank you for playing!</h3>'+
@@ -145,7 +147,11 @@ var trivia = {
             '<p>Please play again!</p>');
           
           // hide game sction
+          $('#quest').hide();
+
           $('#game').hide();
+
+          $('#options').hide();
           
           // show start button to begin a new game
           $('#start').show();
@@ -184,6 +190,8 @@ var trivia = {
         }
         
       },
+
+      
       // method to remove previous question results and options
       guessResult : function(){
         
@@ -192,14 +200,15 @@ var trivia = {
         
         // remove the options and results
         $('.option').remove();
+        $('#question').remove();  //added in hopes that the last question doesn't get skipped and disappears when results show
         $('#results h3').remove();
         
         // begin next question
-        trivia.nextQuestion();
+       trivia.nextQuestion();
          
       }
     
-    }
+    };
 
 
 
@@ -237,23 +246,5 @@ var trivia = {
 
   // function 
 
- 
 
 
-  // var   number strings array object  boolean
-
-  var num = 1   // math operations with number 
-
-  var str = "1"    //str+str = "11"
-  var str="a"       // str + str = "aa"
-
-  var array = ["a","b","c"]  //start with position    list  array[0]  array[1]
-  
-
-  var key = "color"   // car[key]  or car.color  
-  var car={     //  dot notation or bracket notation   car.brand   car["brand"]
-    brand:"toyota",
-    color:"red",
-    model:"prius"
-
-  }
