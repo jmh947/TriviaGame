@@ -29,30 +29,23 @@ audio {
 
 .centered {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .container {
       background-color: white;
-      border: solid 5px black;
+      border: solid 10px gold;
       padding: 20px;
   }
 
-  #start {
-    align-items: center;
-  }
-
-#questions {
-    background-color: white;
-}
 
 #quest {
     text-align: center;
     background-color: white;
     color: black;
-    border: solid black 1px;
+    border: solid red 3px;
     padding: 25px;
     text-size-adjust: auto;
     text-emphasis: bold;
@@ -64,5 +57,9 @@ audio {
 
 #options {
     align-content: center;
+    padding: 5px;
+    margin: 15px;
+    border: solid red 3px;
+
     
 }
